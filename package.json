@@ -1,0 +1,22 @@
+{
+  "name": "project_953481_frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wongsathorn632115035/Project_953481_Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wongsathorn632115035/Project_953481_Frontend/issues"
+  },
+  "homepage": "https://github.com/Wongsathorn632115035/Project_953481_Frontend#readme",
+  "dependencies": {
+    "@vue/cli": "^5.0.8"
+  }
+}
