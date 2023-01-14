@@ -17,11 +17,12 @@
       />
     </form>
     <button @click="this.byTitle = !this.byTitle">Switch search type</button>
-    <div>
+    <div class="events-cards">
       <Card v-for="anime in animeList"
       :key="anime.mal_id"
       :anime="anime" />
     </div>
+    
   </div>
 </template>
 <script>
@@ -60,5 +61,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.events-cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  justify-content: left;
 }
 </style>
