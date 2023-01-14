@@ -1,10 +1,32 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+ <nav>
+    <router-link to="/home"><a class="">home</a></router-link>
+    <span v-if="this.$route.name == 'home'"> | 
+      <span v-if="this.$store.state.loggedIn == false">
+        <router-link to="/login">
+          <a class="">Log in</a>
+        </router-link>
+      </span>
+      <span v-else>
+        <a class="" @click="this.$store.dispatch('logout')"
+          >Log out</a
+        >
+      </span>
+    </span>
   </nav>
   <router-view />
 </template>
+<script>
+export default {
+
+  methods: {
+    logout() {
+      this.$store.commit('logout')
+    }
+
+  },
+}
+</script>
 
 <style>
 #app {
@@ -26,5 +48,6 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+
 }
 </style>
