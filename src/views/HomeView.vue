@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="events">
     <form class="search-box" v-if="byTitle" @submit.prevent="SearchTitle">
       <input
         type="search"
@@ -24,7 +24,6 @@
     </div>
   </div>
 </template>
-
 <script>
 // @ is an alias to /src
 import Card from '../components/Card.vue'
@@ -52,13 +51,14 @@ export default {
       this.animeList = await response.json();
       console.log(this.animeList)
     },
-    async switch() {
-      if(this.byTitle){
-        this.byTitle = false
-      }else {
-        this.byTitle = true
-      }
-    }
   }
 };
 </script>
+
+<style scoped>
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
