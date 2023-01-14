@@ -6,7 +6,6 @@
   </template>
   <script>
   export default {
-    name: 'EventCard',
     props: ['anime']
   }
   </script>
