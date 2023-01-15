@@ -26,12 +26,12 @@
         :anime="anime"
       />
     </div>
-    <div v-else class="not-found">
-      <h3>
+    <div v-else class="">
+      <h2> Error! not found</h2>
+      <h2>
         Did you mean:
         <i @click.prevent="SearchBySimilar">{{ animeList.similar_word }}</i>
-      </h3>
-      <h1>404 not found..</h1>
+      </h2>
     </div>
   </div>
 </template>
