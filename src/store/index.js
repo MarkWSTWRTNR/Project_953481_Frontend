@@ -2,11 +2,7 @@ import { createStore } from "vuex";
 import loginService from "../services/LoginService";
 import detailService from "@/services/DetailService";
 import router from "@/router";
-import VuexPersistence from "vuex-persist";
 
-const vuexLocal = new VuexPersistence({
-  storage: window.localStorage,
-});
 export default createStore({
   state: {
     loggedIn: false,
@@ -153,5 +149,5 @@ export default createStore({
   },
   getters: {},
   modules: {},
-  plugins: [vuexLocal.plugin],
+
 });
