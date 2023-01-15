@@ -1,19 +1,21 @@
 <template>
   <div :style="{}">
-  <nav>
-    <router-link to="/home"><a class="">Home</a></router-link>
-    <span v-if="this.$route.name == 'home'"> |
-      <span v-if="this.$store.state.loggedIn == false">
-        <router-link to="/login">
-          <a class="">Log in</a>
-        </router-link>
+    <nav>
+      <router-link to="/home"><a class="">Home</a></router-link>
+      <span v-if="this.$route.name == 'home'"> |
+        <span v-if="this.$store.state.loggedIn == false">
+          <router-link to="/login">
+            <a class="">Log in</a>
+          </router-link>
+        </span>
+        <span v-else>
+          <router-link to="/favorite"><a class="favorite-button">Favorite</a></router-link>
+         | <a class="" @click="this.$store.dispatch('logout')">Log out</a>
+        </span>
       </span>
-      <span v-else>
-        <a class="" @click="this.$store.dispatch('logout')">Log out</a>
-      </span>
-    </span>
-  </nav>
-  <router-view /></div>
+    </nav>
+    <router-view />
+  </div>
 </template>
 <script>
 export default {
@@ -27,10 +29,11 @@ export default {
 </script>
 
 <style>
-body{
-background-image: url('../src/assets/bg.png');
-background-size: cover;
+body {
+  background-image: url('../src/assets/bg.png');
+  background-size: cover;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

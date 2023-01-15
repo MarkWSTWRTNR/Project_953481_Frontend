@@ -1,9 +1,15 @@
 <template>
+    <router-link
+    class="card"
+    target="_self"
+    :to="{ name: 'detail', params: { id: anime.mal_id } }"
+  >
       <div class="event-card">
         <img :src="anime.main_picture" />
         <span>{{ anime.title }}</span> <br>
         <span>Score: {{ anime.score }}</span>
       </div>
+    </router-link>
   </template>
   <script>
   export default {
