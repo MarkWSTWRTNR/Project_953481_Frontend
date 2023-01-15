@@ -1,7 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue"
-
+import DetailView from "../views/DetailView.vue";
+import DetailService from "@/services/DetailService.js";
+import store from "@/store/index.js";
+import UserFavoriteView from "../views/FavoriteListView.vue";
+// import SuggestionView from "../views/SuggestionView.vue";
 const routes = [
   {
     path: "/home",
@@ -13,20 +17,29 @@ const routes = [
     name: "login",
     component: LoginView,
   },
+  
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/detail/:id",
+    name: "detail",
+    component: DetailView,
+    beforeEnter: (to) => {
+      return DetailService.getAnime(to.params.id).then((response) => {
+        store.state.anime = response.data;
+        store.state.givenScore = "";
+        console.log(store.state.anime);
+      });
+    },
+  },
+  {
+    path: "/favorite",
+    name: "favorite",
+    component: UserFavoriteView,
   },
 ];
-
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
 
 export default router;
+
