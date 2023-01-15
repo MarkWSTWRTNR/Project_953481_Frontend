@@ -17,7 +17,7 @@
       <td>{{ favorite.score }}</td>
       <td>
         
-        <!-- <button @click="dispatchAction(favorite)">-</button> -->
+        <button @click="dispatchAction(favorite)">-</button>
         <!--Function ใช้บอก Store ว่าเกิด Action ขึ้นแล้ว ให้อัพเดท Type ตาม Reducer  -->
       </td>
     </tr>
