@@ -1,7 +1,8 @@
 <template>
       <div class="event-card">
         <img :src="anime.main_picture" />
-        <span>{{ anime.title }}</span>
+        <span>{{ anime.title }}</span> <br>
+        <span>Score: {{ anime.score }}</span>
       </div>
   </template>
   <script>
