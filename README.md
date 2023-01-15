@@ -1,3 +1,8 @@
+# Name
+Wongsathorn Woratanarat 632115035 <br>
+[URL Front_End](https://github.com/Wongsathorn632115035/Project_953481_Frontend) <br>
+[URL Back_End](https://github.com/Wongsathorn632115035/Project_953481_Backend)
+
 # project
 
 ## Project setup
