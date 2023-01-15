@@ -26,11 +26,11 @@
         :anime="anime"
       />
     </div>
-    <div v-else class="">
+    <div v-else >
       <h2> Error! not found</h2>
       <h2>
         Did you mean:
-        <i @click.prevent="SearchBySimilar">{{ animeList.similar_word }}</i>
+        <i @click.prevent="SearchBySimilar" class="text_error">{{ animeList.similar_word }}</i>
       </h2>
     </div>
   </div>
@@ -95,5 +95,9 @@ export default {
   flex-wrap: wrap;
   width: 1200px;
   justify-content: left;
+}
+.text_error{
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>
